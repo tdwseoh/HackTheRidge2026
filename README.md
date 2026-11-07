@@ -36,24 +36,24 @@ Light mode uses dark text across the hero, counters, links, and reading sections
 
 ## Interface palette
 
-The semantic `--city-*` variables in `src/app/review.css` use the supplied 2026 promo palette: mint, pale cyan, indigo, navy, and teal. Text stays on opaque reading bands so the city does not affect contrast. Existing font families and the original heading/body sizing remain in use; no new fonts are introduced. Reuse these roles instead of choosing new colours for each component.
+The semantic `--city-*` variables in `src/app/review.css` use a restrained subset of the supplied 2026 promo palette. White and navy form the main surfaces; indigo marks day registration actions, and mint is reserved for small night accents. Pale cyan and mint are not used as broad day surfaces. Text stays on opaque reading bands so the city does not affect contrast. Existing font families and the original heading/body sizing remain in use; no new fonts are introduced. Reuse these roles instead of choosing new colours for each component.
 
 | Role | Day | Night |
 | --- | --- | --- |
-| Page canvas | `#94A6C5` | `#2A4365` |
-| Reading surface | `#DDF5F6` | `#2A4365` |
-| Header / navigation | `#B1D9BE` | `#2A4365` |
+| Page canvas | `#FFFFFF` | `#2A4365` |
+| Reading surface | `#FFFFFF` | `#2A4365` |
+| Header / navigation | `#FFFFFF` | `#2A4365` |
 | Body text / secondary button text and border | `#2A4365` | `#DDF5F6` |
-| Muted text | `#32586F` | `#B1D9BE` |
+| Muted text | `#32586F` | `#DDF5F6` |
 | Primary registration button | `#4A5899` | `#B1D9BE` |
 | Primary button text | `#FFFFFF` | `#1E3920` |
 | Primary hover background | `#2A4365` | `#DDF5F6` |
-| Secondary hover background | `#B1D9BE` | `#32586F` |
+| Secondary hover background | `#DDF5F6` | `#32586F` |
 | Keyboard focus outline | `#4A5899` | `#B1D9BE` |
 
 Reserve filled primary buttons for registration. Secondary actions use transparent backgrounds with outlined borders. Focus indicators are 3px wide with a 3px offset. The footer and FAQ terminal are inverse surfaces in both themes, using navy, pale blue text, and mint focus indicators. The decorative city scene retains its own artwork colours.
 
-Calculated text contrast ratios: body text 8.84:1 in both themes; muted text 6.69:1 by day and 6.48:1 by night; registration buttons 6.67:1 by day and 8.15:1 by night. The hover combinations also exceed 4.5:1. These pair checks do not establish whole-site WCAG conformance.
+Calculated text contrast ratios: body text 10.05:1 by day and 8.84:1 by night; muted text 7.61:1 by day and 8.84:1 by night; registration buttons 6.67:1 by day and 8.15:1 by night. The hover combinations also exceed 4.5:1. These pair checks do not establish whole-site WCAG conformance.
 
 ## Event gallery
 

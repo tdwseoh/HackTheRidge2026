@@ -198,7 +198,7 @@ footer p, footer a { font-size: 1.08rem !important; }
 
 /* Brand accents and neutral surfaces share semantic interface colour roles. */
 :root {
-  --city-paper: #ddf5f6;
+  --city-paper: #ffffff;
   --city-ink: #2a4365;
   --city-muted: #32586f;
   --city-accent: #4a5899;
@@ -207,20 +207,20 @@ footer p, footer a { font-size: 1.08rem !important; }
   --city-primary: #4a5899;
   --city-primary-ink: #ffffff;
   --city-primary-hover: #2a4365;
-  --city-secondary-hover: #b1d9be;
+  --city-secondary-hover: #ddf5f6;
   --city-focus: #4a5899;
   --city-inverse-paper: #2a4365;
   --city-inverse-ink: #ddf5f6;
   --city-inverse-accent: #b1d9be;
-  --city-canvas: #94a6c5;
-  --city-header: #b1d9be;
+  --city-canvas: #ffffff;
+  --city-header: #ffffff;
   --city-shadow: none;
   color-scheme: light;
 }
 :root[data-city-theme="night"] {
   --city-paper: #2a4365;
   --city-ink: #ddf5f6;
-  --city-muted: #b1d9be;
+  --city-muted: #ddf5f6;
   --city-accent: #b1d9be;
   --city-rule: #8394b2;
   --city-primary: #b1d9be;
@@ -235,8 +235,8 @@ footer p, footer a { font-size: 1.08rem !important; }
 }
 body { background: var(--city-canvas); color: var(--city-ink); }
 .site-shell { background: transparent; color: var(--city-ink); }
-#background { background: linear-gradient(180deg,#ddf5f6,#94a6c5 62%,#85bdb3); }
-[data-city-theme="night"] #background { background: linear-gradient(180deg,#2a4365,#32586f 65%,#1e3920); }
+#background { background: #ffffff; }
+[data-city-theme="night"] #background { background: #2a4365; }
 .htr-open-content { color: var(--city-ink); }
 .htr-open-content::before { content: none; }
 .htr-open-content :is(h2,h3,h4,p,dt,dd), .htr-open-content .metro-horizontal-text,
@@ -536,6 +536,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 .htr-open-content { background: transparent; border: 0; box-shadow: none; }
 .htr-open-content::before { content: ""; inset: -1.5rem calc(50% - 50vw); background: var(--city-paper); filter: none; }
-.htr-hero-panel { border-color: var(--city-accent); }
+.htr-hero-panel { border: 0; }
 .htr-hero .hero-wordmark > span:nth-of-type(2) { color: var(--city-accent); }
 @media (max-width: 767px) { .htr-open-content::before { inset-block: -1rem; } }
