@@ -30,15 +30,15 @@ export default function Scene({ reducedMotion = false, night = false }) {
     state.camera.position.y += (targetY - state.camera.position.y) * (1 - Math.exp(-5 * delta));
   });
   return <>
-    <fog attach="fog" args={[night ? '#112333' : '#d8e3eb', 40, 170]} />
-    <hemisphereLight args={[night ? '#93a8bd' : '#f3f7fc', night ? '#233442' : '#a2b3b7', night ? 0.85 : 2.4]} />
-    <directionalLight position={[25,45,15]} intensity={night ? 0.6 : 2.2} color={night ? '#aec9ec' : '#fff8ef'} />
+    <fog attach="fog" args={[night ? '#2a4365' : '#94a6c5', 40, 170]} />
+    <hemisphereLight args={[night ? '#94a6c5' : '#ddf5f6', night ? '#2a4365' : '#85bdb3', night ? 0.85 : 2.4]} />
+    <directionalLight position={[25,45,15]} intensity={night ? 0.6 : 2.2} color={night ? '#94a6c5' : '#ffffff'} />
     <Buildings night={night} /><StreetLife night={night} />
     <Train reducedMotion={reducedMotion} night={night} />
     <Plane reducedMotion={reducedMotion} night={night} />
     <mesh rotation={[-Math.PI / 2,0,0]} position={[0,-20,-90]}>
       <planeGeometry args={[1000,1000]} />
-      <meshStandardMaterial color={night ? '#293b41' : '#a8b8bd'} roughness={0.95} />
+      <meshStandardMaterial color={night ? '#32586f' : '#85bdb3'} roughness={0.95} />
     </mesh>
   </>;
 }

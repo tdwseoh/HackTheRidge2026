@@ -44,7 +44,7 @@ export default function Buildings({ night = false })
         for (let i = 0; i < count; i++)
         {
             mesh.current.setMatrixAt(i, matrixes[i]);
-            mesh.current.setColorAt(i, new three.Color(["#bdcbd5", "#a9bdb8", "#d4cec3", "#a8b8c7"][i % 4]));
+            mesh.current.setColorAt(i, new three.Color(["#8394b2", "#85bdb3", "#94a6c5", "#b1d9be"][i % 4]));
         }
         mesh.current.instanceMatrix.needsUpdate = true;
         mesh.current.instanceColor.needsUpdate = true;
