@@ -16,8 +16,8 @@ Open http://localhost:3000. To check a production build, run `npm run build`.
 ## Review changes
 
 - Open hero layout with quick event information and unboxed statistics.
-- Revised About, build experience and sponsor wording.
-- Section order: Home, About HTR, Build experience, 2025 Hall of Fame, History, Registration, Sponsors, Team, FAQ Terminal.
+- A short About introduction and three event photos replace the repeated process cards, six-stop pitch, and moving photo strip. The hero keeps the event type, date, location, and registration action; sponsor and footer copy is concise.
+- Section order: Home, About HTR with event photos, 2025 Hall of Fame, History, Registration, Sponsors, Team, FAQ Terminal.
 - The original 2025 website is linked from the footer. Its original design is retained, with the custom cursor removed.
 - Warm daytime city and a night mode, selected with the Day/Night button in the header and remembered locally. The city includes autumn trees, streetlights, rooftop details, and a rounded four carriage train with illuminated windows. Camera movement is bounded above the road throughout scrolling.
 - Responsive FAQ spacing and playful terminal usernames.

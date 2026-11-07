@@ -7,7 +7,7 @@ import { useCityTheme } from "./CityTheme";
 import { REGISTRATION_URL } from "@/lib/links";
 
 const sections = [
-  ["#about", "About HTR"], ["#experience", "A Day at HTR"],
+  ["#about", "About HTR"],
   ["#winners", "2025 Hall of Fame"], ["#history", "History"],
   [REGISTRATION_URL, "Sign Up"], ["#sponsors", "Sponsors"],
   ["#team", "Team"], ["#faq", "FAQ"],

@@ -36,7 +36,7 @@ export default function Footer() {
             </div>
 
             <p className="mt-7 max-w-2xl text-base font-semibold leading-8 text-htr-white/82 sm:text-lg">
-              Hack the Ridge is where innovation meets community. We are an annual hackathon at Iroquois Ridge High School that hosts over 150+ leaders in STEM every year to innovate and push the limit of technology.
+              A high school hackathon at Iroquois Ridge High School in Oakville, Ontario.
             </p>
           </div>
 

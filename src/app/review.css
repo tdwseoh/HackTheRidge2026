@@ -26,7 +26,6 @@
 .htr-event-strip { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid #afd5bc66; border-bottom: 1px solid #afd5bc44; }
 .htr-event-location { display: flex; align-items: center; gap: 1rem; text-align: left; cursor: pointer; }
 .htr-event-location strong { display: block; margin-bottom: .2rem; font-size: 1.05rem; }
-.htr-event-invitation { font-size: .82rem; color: #dfd7d7; }
 /* Filled actions are reserved for registration; other actions are outlined. */
 .htr-register-link, .htr-secondary-link {
   display: inline-flex;
@@ -89,7 +88,6 @@
   .htr-date-month { margin: 0; font-size: 1.2rem; }
   .htr-date-link .htr-text-link { margin: 0; font-size: .65rem; gap: .35rem; }
   .htr-event-strip { flex-wrap: wrap; gap: 1.5rem; }
-  .htr-event-invitation { display: none; }
   .htr-register-link { width: 100%; }
   .htr-hero-stats { gap: 1rem; }
   .htr-hero-stat + .htr-hero-stat { padding-left: 1rem; }
@@ -153,7 +151,6 @@ body { background: #63828d; }
 .htr-text-link { font-size: 1rem; }
 .htr-event-location strong { font-size: 1.3rem; }
 .htr-event-location span span { font-size: 1.05rem; }
-.htr-event-invitation { font-size: 1.1rem; }
 .htr-hero-stat dt { font-size: 1rem; letter-spacing: normal; text-transform: none; line-height: 1.45; }
 .htr-date-month { font-size: 1.6rem; }
 #team .htr-open-content h3 { font-size: 1.18rem; }
@@ -379,7 +376,7 @@ footer a:hover { color: var(--city-inverse-accent); }
 .htr-open-content :is(div,span)[class*="text-htr-white"] { color: var(--city-ink); }
 .htr-open-content a:not([class*="bg-"]):not(.htr-register-link):not(.htr-secondary-link) { color: var(--city-accent); }
 .htr-open-content h2:first-child, .htr-open-content h3:first-child, .htr-open-content h4:first-child { margin-top: 0; }
-.htr-hero :is(p,span,strong,dt,dd,svg), .htr-hero .hero-wordmark__text { color: var(--city-ink); text-shadow: none; }
+.htr-hero :is(p,span,strong,time,dt,dd,svg), .htr-hero .hero-wordmark__text { color: var(--city-ink); text-shadow: none; }
 .htr-hero .htr-text-link { color: var(--city-accent); }
 .htr-hero :is(.htr-hero-date,.htr-event-strip,.htr-hero-stat) { border-color: var(--city-rule); }
 .htr-open-content .htr-history-puzzle-link { color: var(--city-accent); }
@@ -476,3 +473,13 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* The terminal is an inverse surface in either theme. */
 #faq .faq-terminal-input-row input:focus-visible { outline: 3px solid var(--city-inverse-accent); outline-offset: 3px; }
+
+/* A short introduction and three photos replace the repeated pitch sections. */
+.htr-photo-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1rem; }
+.htr-event-photo { position: relative; min-height: 13rem; overflow: hidden; border-radius: 1rem; }
+.htr-event-photo:first-child { grid-row: span 2; min-height: 27rem; }
+@media (max-width: 767px) {
+  .htr-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .htr-event-photo { min-height: 10rem; }
+  .htr-event-photo:first-child { grid-column: 1 / -1; grid-row: auto; min-height: 18rem; }
+}
