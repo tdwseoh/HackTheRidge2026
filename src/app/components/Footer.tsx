@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Mail, MapPin, MessageCircle } from "lucide-react";
+import { REGISTRATION_URL } from "@/lib/links";
 
 const quickLinks = [
   { name: "About", href: "#about" },
-  { name: "Updates", href: "#register" },
+  { name: "Sign Up", href: REGISTRATION_URL },
   { name: "Sponsors", href: "#sponsors" },
   { name: "Team", href: "#team" },
   { name: "FAQ", href: "#faq" },
@@ -35,7 +36,7 @@ export default function Footer() {
             </div>
 
             <p className="mt-7 max-w-2xl text-base font-semibold leading-8 text-htr-white/82 sm:text-lg">
-              Hack the Ridge is where innovation meets community. We are an annual hackathon at Iroquois Ridge High School that hosts over 150+ leaders in STEM every year to innovate and push the limit of technology.
+              A high school hackathon at Iroquois Ridge High School in Oakville, Ontario.
             </p>
           </div>
 
@@ -46,6 +47,8 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  target={link.href === REGISTRATION_URL ? "_blank" : undefined}
+                  rel={link.href === REGISTRATION_URL ? "noopener noreferrer" : undefined}
                   className="w-fit text-base font-bold text-htr-white/82 transition hover:translate-x-1 hover:text-htr-green"
                 >
                   {link.name}

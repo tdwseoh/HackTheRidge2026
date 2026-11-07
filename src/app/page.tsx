@@ -1,17 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  MapPin,
-  Rocket,
-  Trophy,
-  Users,
-  Sparkles,
-  Zap,
-  Instagram,
-} from "lucide-react";
+import { MapPin, Instagram } from "lucide-react";
 import GradientSection from "./components/GradientSection";
 import AnimatedNavbar from "./components/AnimatedNavbar";
 import Footer from "./components/Footer";
@@ -21,78 +12,33 @@ import ContactTeam from "./components/ContactTeam";
 import SponsorsGrid from "./components/SponsorsGrid";
 import HistoryPuzzleSection from "./components/HistoryPuzzleSection";
 import TeamSection from "./components/TeamSection";
+import EventGallery from "./components/EventGallery";
 import { openMapsForDevice } from "@/lib/maps";
-import { INTEREST_FORM_URL } from "@/lib/links";
+import { REGISTRATION_URL } from "@/lib/links";
 
-
-
-const tracks = [
-  {
-    title: "Automation + Tools",
-    body: "Build useful tools that save time, solve small problems, or make everyday tasks easier.",
-  },
-  {
-    title: "Climate + Community",
-    body: "Create apps that support schools, local communities, sustainability, accessibility, or wellbeing.",
-  },
-  {
-    title: "Web + Games",
-    body: "Design polished websites, games, visual tools, dashboards, and interactive experiences.",
-  },
-];
-
-const featureCards = [
-  "Start with an idea. Leave with a prototype people can actually try.",
-  "Meet builders, designers, and first time hackers in a space made for learning.",
-  "Turn blank screens into games, apps, tools, and demos with friendly support nearby.",
-  "Create something you can show in a portfolio, presentation, or future application.",
-  "Move through the day with checkpoints, feedback, mini wins, and team energy.",
-  "Celebrate every project, polished, weird, ambitious, simple, or still evolving.",
-];
 
 
 const winnerCards = [
   {
     title: "First Place",
     image: "/winners/1.JPG",
-    icon: Trophy,
   },
   {
     title: "Second Place",
     image: "/winners/2.JPG",
-    icon: Sparkles,
   },
   {
     title: "Third Place",
     image: "/winners/3.JPG",
-    icon: Rocket,
   },
   {
     title: "Best Solo",
     image: "/winners/solo.JPG",
-    icon: Zap,
   },
   {
     title: "Best Women's Team",
     image: "/winners/Best_Womens.JPG",
-    icon: Users,
   },
-];
-
-const gallery = [
-  "/last_year/history1.jpg",
-  "/last_year/history2.jpeg",
-  "/last_year/history3.jpg",
-  "/last_year/history4.jpg",
-  "/last_year/history5.jpg",
-  "/history%20photos/photo1.jpg",
-  "/history%20photos/photo2.jpeg",
-  "/history%20photos/photo3.jpg",
-  "/history%20photos/photo4.jpg",
-  "/history%20photos/photo5.jpeg",
-  "/history%20photos/photo6.jpg",
-  "/history%20photos/photo7.jpg",
-  "/history%20photos/photo8.jpg",
 ];
 
 const fadeUp = {
@@ -111,15 +57,15 @@ export default function Home() {
       <Background />
 
       <section id="home" className="htr-hero relative px-5 text-htr-white sm:px-8 lg:px-12" aria-labelledby="home-title">
-        <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="htr-hero-panel relative z-10 mx-auto w-full max-w-7xl">
           <h1 id="home-title" className="sr-only">Hack The Ridge 2026</h1>
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7 }} className="htr-hero-stage">
             <div className="htr-hero-wordmark-wrap" aria-hidden="true">
               <CyberWordmark variant="hero" className="mx-auto w-full" />
             </div>
             <div className="htr-hero-date">
-              <p className="htr-eyebrow">Hack The Ridge 2026</p>
-              <div className="htr-coming-soon"><span className="htr-date-day">December 12th</span></div>
+              <p className="htr-eyebrow">High school hackathon</p>
+              <div className="htr-coming-soon"><time dateTime="2026-12-12" className="htr-date-day">December 12, 2026</time></div>
             </div>
           </motion.div>
           <div className="htr-event-strip" aria-label="Quick event info">
@@ -127,132 +73,28 @@ export default function Home() {
               <MapPin className="h-5 w-5 shrink-0 text-htr-green" />
               <span><strong>Iroquois Ridge HS</strong><span className="block text-sm text-htr-white/80">Oakville, Ontario</span></span>
             </button>
-            <p className="htr-event-invitation">Join Hack The Ridge</p>
             <a
-              href={"https://62c3ac57.htr-dashboard2026.pages.dev/auth"} target="_blank" rel="noopener noreferrer"
+              href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer"
               className="htr-register-link"
             >
-              Sign Up!
+              Sign Up
             </a>
           </div>
 
         </div>
       </section>
 
-      <section id="about" className="relative overflow-hidden px-5 py-24 text-htr-white sm:px-8 sm:py-28 lg:px-12 lg:py-36">
+      <section id="about" className="relative overflow-hidden px-5 py-16 text-htr-white sm:px-8 sm:py-20 lg:px-12 lg:py-24" aria-labelledby="about-title">
         <div className="htr-open-content relative z-10 mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-16">
-            <div>
-              <h2 className="font-sacco mt-4 max-w-3xl text-6xl font-black uppercase leading-[0.86] tracking-[0.035em] text-htr-white sm:text-7xl lg:text-8xl">
-                A day to build something of your own.
-              </h2>
-            </div>
-
-            <div className="lg:pb-2">
-              <p className="text-lg font-semibold leading-8 text-htr-white sm:text-xl">
-                Hack The Ridge is a student led hackathon at Iroquois Ridge High School in Oakville. Spend the day making a project with other students, getting help from mentors, and sharing what you built. Come with friends or meet a team here. No coding experience is required.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs font-black uppercase tracking-[0.18em] text-htr-shaded sm:text-sm">
-                <span>Beginners welcome.</span>
-                <span>All skills welcome.</span>
-                <span>Bring your curiosity.</span>
-              </div>
-            </div>
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end lg:gap-16">
+            <h2 id="about-title" className="font-sacco max-w-3xl text-6xl font-black leading-[0.95] sm:text-7xl">Your idea. One day.</h2>
+            <p className="max-w-xl text-lg leading-8">12 hours to build, learn from mentors, and meet other students. No coding experience needed.</p>
           </div>
-
-          <div className="mt-14 grid border-y border-htr-green/25 md:grid-cols-3">
-            {[
-              ["Choose an idea", "Start with a problem you care about. Keep it small enough to try in a day."],
-              ["Build together", "Split the work, ask for help, and make the project better as a team."],
-              ["Share your work", "Show what you made, explain how it works, and see what other teams tried."],
-            ].map(([title, body], index) => (
-              <div
-                key={title}
-                className={`py-7 md:px-7 md:py-9 ${index > 0 ? "border-t border-htr-green/25 md:border-l md:border-t-0" : ""}`}
-              >
-                <h3 className="mt-2 text-2xl font-black text-htr-white sm:text-3xl">{title}</h3>
-                <p className="mt-3 max-w-sm text-base font-semibold leading-7 text-htr-white/85">{body}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* <div className="mt-16 grid gap-10 lg:grid-cols-[0.62fr_1.38fr] lg:gap-16">
-            <div>
-              <h3 className="mt-3 max-w-lg text-4xl font-black leading-tight text-htr-white sm:text-5xl">Choose what interests you.</h3>
-            </div>
-
-            <div className="divide-y divide-htr-blue/12 border-y border-htr-green/25">
-              {tracks.map((track) => {
-                return (
-                  <div key={track.title} className="py-7 sm:py-8">
-                    <div>
-                      <h4 className="mt-1 text-2xl font-black text-htr-white sm:text-3xl">{track.title}</h4>
-                      <p className="mt-2 max-w-2xl text-base font-semibold leading-7 text-htr-white/85">{track.body}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div> */}
+          <EventGallery />
         </div>
       </section>
 
-      <section id="experience" className="relative min-h-screen overflow-hidden px-5 py-24 text-htr-white sm:px-8 sm:py-28 lg:px-12 lg:py-36">
-        <div className="htr-open-content relative z-10 mx-auto max-w-7xl">
-          <div>
-            <motion.div
-              className="max-w-3xl"
-            >
-              <h2 className="font-sacco mt-4 text-6xl font-black uppercase leading-[0.88] tracking-[0.045em] sm:text-7xl lg:text-8xl">
-                What the day looks like.
-              </h2>
-              <p className="readable-copy readable-copy--dark mt-6 max-w-xl text-lg leading-8 text-htr-white">
-                Try a tool you have never used, work through a problem with your team, and leave with a project you can keep developing. Mentors and workshops will help along the way.
-              </p>
-            </motion.div>
-
-            <div className="metro-horizontal-wrap mt-16 sm:mt-20 lg:mt-24">
-              <div className="metro-horizontal-scroll">
-                <div className="metro-horizontal" role="list" aria-label="Hack The Ridge build experience">
-                  <div className="metro-horizontal-line" aria-hidden="true" />
-
-                  {featureCards.map((feature, index) => (
-                    <div
-                      key={feature}
-                      role="listitem"
-                      className={`metro-horizontal-stop ${index % 2 === 0 ? "metro-horizontal-stop--top" : "metro-horizontal-stop--bottom"}`}
-                    >
-                      <div className="metro-horizontal-copy">
-                        <span className="metro-horizontal-number font-sacco">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <p className="metro-horizontal-text">{feature}</p>
-                      </div>
-
-                      <div className="metro-horizontal-station" aria-hidden="true">
-                        <span className="metro-horizontal-dot" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-20 overflow-hidden rounded-[2.2rem] border border-htr-green/20 bg-htr-white/10 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl">
-            <div className="marquee-track flex gap-3">
-              {[...gallery, ...gallery].map((src, index) => (
-                <div key={`${src}-${index}`} className="relative h-48 w-72 shrink-0 overflow-hidden rounded-[1.5rem] sm:h-56 sm:w-96">
-                  <Image src={src} alt="Hack the Ridge previous event" fill sizes="(max-width: 768px) 18rem, 24rem" className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-htr-blue/55 to-transparent" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="winners" className="relative min-h-screen overflow-hidden px-5 py-24 text-htr-white sm:px-8 sm:py-28 lg:px-12 lg:py-36">
+      <section id="winners" className="relative overflow-hidden px-5 py-16 text-htr-white sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="htr-open-content relative z-10 mx-auto max-w-7xl">
           <motion.div
             className="border-b border-htr-green/25 pb-10"
@@ -299,84 +141,30 @@ export default function Home() {
       <section id="register" className="relative scroll-mt-28 px-5 py-24 text-htr-white sm:px-8 sm:py-28 lg:px-12 lg:py-36">
         <div className="htr-open-content relative mx-auto grid max-w-7xl gap-10 border-y border-htr-green/30 py-12 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-20 lg:py-16">
           <div>
-            <h2 className="font-sacco mt-4 text-6xl font-black uppercase leading-[0.95] tracking-[0.035em] sm:text-7xl lg:text-8xl">See you at the Ridge.</h2>
+            <h2 className="font-sacco mt-4 text-6xl font-black uppercase leading-[0.95] tracking-[0.035em] sm:text-7xl lg:text-8xl">Ready to build?</h2>
           </div>
           <div className="lg:justify-self-end">
-            <p className="max-w-md text-lg leading-8">Interested in joining us? Fill out our interest form. The date and registration details are coming soon.</p>
-            <div className="htr-interest-actions">
-              <a href="https://www.instagram.com/hacktheridge/" target="_blank" rel="noopener noreferrer" className="htr-instagram-updates" aria-label="Check Instagram for updates" title="Check Instagram for updates"><Instagram aria-hidden="true" size={22} strokeWidth={1.8} /><span>Check Instagram for updates</span></a>
-              {/* <a href={INTEREST_FORM_URL} target="_blank" rel="noopener noreferrer" className="htr-register-link" style={{ borderRadius: 99 }}>I’m interested</a> */}
+            <p className="max-w-md text-lg leading-8">See you December 12.</p>
+            <div className="htr-registration-actions">
+              <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer" className="htr-register-link">Sign Up</a>
+              <a href="https://www.instagram.com/hacktheridge/" target="_blank" rel="noopener noreferrer" className="htr-secondary-link"><Instagram aria-hidden="true" size={22} strokeWidth={1.8} /><span>Check Instagram for updates</span></a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="sponsors" className="relative z-0 overflow-hidden px-5 pb-36 pt-24 text-htr-white sm:px-8 sm:pt-28 lg:px-12 lg:pb-44 lg:pt-36">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_12%,rgba(175,213,188,.15),transparent_34%),radial-gradient(circle_at_90%_32%,rgba(125,182,173,.14),transparent_32%)]" />
+      <section id="sponsors" className="relative overflow-hidden px-5 py-16 text-htr-white sm:px-8 sm:py-20 lg:px-12 lg:py-24" aria-labelledby="sponsors-title">
         <div className="htr-open-content relative z-10 mx-auto max-w-7xl">
-          <motion.div
-            className="relative"
-          >
-            <div className="max-w-3xl">
-              <h2 className="font-sacco mt-4 text-6xl font-black uppercase leading-[0.87] tracking-[0.035em] text-htr-white sm:text-7xl lg:text-8xl">
-                Help make HTR happen.
-              </h2>
-            </div>
-
-            <div className="relative mt-16 overflow-hidden border-y border-htr-green/20 lg:mt-20">
-              <div className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px bg-htr-green/16 lg:block" />
-
-              <div className="grid lg:grid-cols-2">
-                {[
-                  { number: "01", title: "Prizes + gear", body: "Your company can recognise students’ effort with prizes, equipment, or software they can keep using after the event. Help a first project become the start of a longer interest.", icon: Trophy },
-                  { number: "02", title: "Food + event support", body: "A meal, supplies, or help with event costs can make a real difference to a student’s day. Your support helps us keep the event free and makes more students feel welcome.", icon: Zap },
-                  { number: "03", title: "Workshops + mentors", body: "Give your team a chance to share what they know. A short workshop or time spent mentoring can help a student get unstuck and see a future in your field.", icon: Users },
-                  { number: "04", title: "Community support", body: "Build a connection with the students and schools around your business. Your support creates space for young people in Oakville to learn, meet peers, and try something new.", icon: Sparkles },
-                ].map((item, index) => {
-                  return (
-                    <div
-                      key={item.title}
-                      className={`group relative min-h-[14rem] py-8 sm:py-10 lg:p-10 ${
-                        index < 2 ? "border-b border-htr-green/16" : ""
-                      } ${index % 2 === 0 ? "lg:pr-14" : "lg:pl-14"}`}
-                    >
-                      <div className="flex items-start gap-5 sm:gap-6">
-                        
-
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-baseline justify-between gap-5">
-                            <h3 className="text-xl font-black tracking-[-0.02em] text-htr-white sm:text-2xl">{item.title}</h3>
-                            <span className="font-sacco text-2xl font-black tracking-[0.08em] text-htr-green/45 sm:text-3xl">{item.number}</span>
-                          </div>
-                          <p className="mt-4 max-w-md text-base font-semibold leading-7 text-htr-white/80">{item.body}</p>
-                        </div>
-                      </div>
-
-                      <div className="mt-8 h-px w-16 bg-htr-green/45 transition-all duration-300 group-hover:w-28" />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="mt-12 flex flex-col gap-6 border-b border-htr-green/25 pb-10 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-htr-green">Sponsor HTR 2026</p>
+          <div className="flex flex-col gap-8 border-b border-htr-green/25 pb-10 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <h2 id="sponsors-title" className="font-sacco text-6xl font-black leading-[0.95] sm:text-7xl">Support HTR.</h2>
+              <p className="mt-5 max-w-xl text-lg leading-8">Help students build through prizes, meals, mentorship, or workshops.</p>
             </div>
             <ContactTeam />
           </div>
-
-          <div className="mt-20 border-htr-green/16 ">
-            <div>
-              <div>
-                <p className="text-sm font-black uppercase tracking-[0.35em] text-htr-green">Thank you, sponsors 2026</p>
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <SponsorsGrid />
-            </div>
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold">Our sponsors.</h3>
+            <div className="mt-8"><SponsorsGrid /></div>
           </div>
         </div>
       </section>

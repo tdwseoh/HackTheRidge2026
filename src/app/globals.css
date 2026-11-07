@@ -10,10 +10,10 @@
 
 @theme inline {
 
-  --color-htr-green: #AFD5BC;
-  --color-htr-white: #dfd7d7;
-  --color-htr-blue: #1E3159;
-  --color-htr-shaded: #7DB6AD;
+  --color-htr-green: #B1D9BE;
+  --color-htr-white: #DDF5F6;
+  --color-htr-blue: #2A4365;
+  --color-htr-shaded: #85BDB3;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
