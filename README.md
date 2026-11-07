@@ -36,24 +36,24 @@ Light mode uses dark text across the hero, counters, links, and reading sections
 
 ## Interface palette
 
-The semantic `--city-*` variables in `src/app/review.css` use a restrained subset of the supplied 2026 promo palette. White and navy form the main surfaces; indigo marks day registration actions, and mint is reserved for small night accents. Pale cyan and mint are not used as broad day surfaces. Text stays on opaque reading bands so the city does not affect contrast. Existing font families and the original heading/body sizing remain in use; no new fonts are introduced. Reuse these roles instead of choosing new colours for each component.
+The semantic `--city-*` variables in `src/app/review.css` follow the supplied **HTR 2026 WEBDEV INFO.pdf**. The hero uses navy, pale cyan, and mint in both themes. The day sky uses a blue gradient and the day reading bands/header use pale cyan. The hero is narrower to reveal more city scenery. Existing font families and text sizing remain unchanged.
 
 | Role | Day | Night |
 | --- | --- | --- |
-| Page canvas | `#FFFFFF` | `#2A4365` |
-| Reading surface | `#FFFFFF` | `#2A4365` |
-| Header / navigation | `#FFFFFF` | `#2A4365` |
-| Body text / secondary button text and border | `#2A4365` | `#DDF5F6` |
-| Muted text | `#32586F` | `#DDF5F6` |
-| Primary registration button | `#4A5899` | `#B1D9BE` |
-| Primary button text | `#FFFFFF` | `#1E3920` |
-| Primary hover background | `#2A4365` | `#DDF5F6` |
-| Secondary hover background | `#DDF5F6` | `#32586F` |
-| Keyboard focus outline | `#4A5899` | `#B1D9BE` |
+| City backdrop | `#94A6C5` to `#8394B2` | `#2A4365` |
+| Reading surface / header | `#DDF5F6` | `#2A4365` |
+| Body text | `#2A4365` | `#DDF5F6` |
+| Supporting text | `#32586F` | `#DDF5F6` |
+| Hero surface | `#2A4365` | `#2A4365` |
+| Hero text | `#DDF5F6` | `#DDF5F6` |
+| Hero Sign Up / small wordmark accent | `#B1D9BE` | `#B1D9BE` |
+| Hero Sign Up text | `#1E3920` | `#1E3920` |
+| Registration on reading surfaces/header | `#4A5899` with white text | `#B1D9BE` with `#1E3920` text |
+| Keyboard focus | `#4A5899` on pale surfaces; `#B1D9BE` on navy | `#B1D9BE` |
 
-Reserve filled primary buttons for registration. Secondary actions use transparent backgrounds with outlined borders. Focus indicators are 3px wide with a 3px offset. The footer and FAQ terminal are inverse surfaces in both themes, using navy, pale blue text, and mint focus indicators. The decorative city scene retains its own artwork colours.
+Filled actions are reserved for registration; other actions are outlined. Focus outlines are 3px wide with a 3px offset. Inverse surfaces use navy, pale cyan text, and mint focus indicators. The city buildings use the palette's blue, teal, and mint tones.
 
-Calculated text contrast ratios: body text 10.05:1 by day and 8.84:1 by night; muted text 7.61:1 by day and 8.84:1 by night; registration buttons 6.67:1 by day and 8.15:1 by night. The hover combinations also exceed 4.5:1. These pair checks do not establish whole-site WCAG conformance.
+Calculated text contrast: navy/pale cyan 8.84:1; supporting teal/pale cyan 6.69:1; mint/dark-green registration 8.15:1; indigo/white registration 6.67:1. These pair checks do not establish whole-site WCAG conformance.
 
 ## Event gallery
 

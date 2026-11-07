@@ -198,7 +198,7 @@ footer p, footer a { font-size: 1.08rem !important; }
 
 /* Brand accents and neutral surfaces share semantic interface colour roles. */
 :root {
-  --city-paper: #ffffff;
+  --city-paper: #ddf5f6;
   --city-ink: #2a4365;
   --city-muted: #32586f;
   --city-accent: #4a5899;
@@ -212,8 +212,8 @@ footer p, footer a { font-size: 1.08rem !important; }
   --city-inverse-paper: #2a4365;
   --city-inverse-ink: #ddf5f6;
   --city-inverse-accent: #b1d9be;
-  --city-canvas: #ffffff;
-  --city-header: #ffffff;
+  --city-canvas: #94a6c5;
+  --city-header: #ddf5f6;
   --city-shadow: none;
   color-scheme: light;
 }
@@ -235,7 +235,7 @@ footer p, footer a { font-size: 1.08rem !important; }
 }
 body { background: var(--city-canvas); color: var(--city-ink); }
 .site-shell { background: transparent; color: var(--city-ink); }
-#background { background: #ffffff; }
+#background { background: linear-gradient(180deg, #94a6c5, #8394b2); }
 [data-city-theme="night"] #background { background: #2a4365; }
 .htr-open-content { color: var(--city-ink); }
 .htr-open-content::before { content: none; }
@@ -536,6 +536,22 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 .htr-open-content { background: transparent; border: 0; box-shadow: none; }
 .htr-open-content::before { content: ""; inset: -1.5rem calc(50% - 50vw); background: var(--city-paper); filter: none; }
-.htr-hero-panel { border: 0; }
+/* Hero uses the dark side of the promo palette in either page theme. */
+.htr-hero-panel {
+  --city-paper: #2a4365;
+  --city-ink: #ddf5f6;
+  --city-muted: #b1d9be;
+  --city-accent: #b1d9be;
+  --city-rule: #8394b2;
+  --city-primary: #b1d9be;
+  --city-primary-ink: #1e3920;
+  --city-primary-hover: #ddf5f6;
+  --city-focus: #b1d9be;
+  max-width: 1120px;
+  border: 1px solid var(--city-rule);
+}
+.htr-hero .htr-hero-stage { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 2rem; min-height: 19rem; padding-bottom: 2rem; }
+.htr-hero .htr-register-link:focus-visible { outline-color: var(--city-focus); }
+@media (max-width: 767px) { .htr-hero .htr-hero-stage { grid-template-columns: 1fr; min-height: 0; } }
 .htr-hero .hero-wordmark > span:nth-of-type(2) { color: var(--city-accent); }
 @media (max-width: 767px) { .htr-open-content::before { inset-block: -1rem; } }

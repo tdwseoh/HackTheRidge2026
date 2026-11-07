@@ -30,7 +30,7 @@ export default function Scene({ reducedMotion = false, night = false }) {
     state.camera.position.y += (targetY - state.camera.position.y) * (1 - Math.exp(-5 * delta));
   });
   return <>
-    <fog attach="fog" args={[night ? '#2a4365' : '#ffffff', 40, 170]} />
+    <fog attach="fog" args={[night ? '#2a4365' : '#94a6c5', 40, 170]} />
     <hemisphereLight args={[night ? '#94a6c5' : '#ddf5f6', night ? '#2a4365' : '#85bdb3', night ? 0.85 : 2.4]} />
     <directionalLight position={[25,45,15]} intensity={night ? 0.6 : 2.2} color={night ? '#94a6c5' : '#ffffff'} />
     <Buildings night={night} /><StreetLife night={night} />
