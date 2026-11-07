@@ -12,6 +12,7 @@ import ContactTeam from "./components/ContactTeam";
 import SponsorsGrid from "./components/SponsorsGrid";
 import HistoryPuzzleSection from "./components/HistoryPuzzleSection";
 import TeamSection from "./components/TeamSection";
+import EventGallery from "./components/EventGallery";
 import { openMapsForDevice } from "@/lib/maps";
 import { REGISTRATION_URL } from "@/lib/links";
 
@@ -40,12 +41,6 @@ const winnerCards = [
   },
 ];
 
-const gallery = [
-  { src: "/last_year/history2.jpeg", alt: "Students gathered around laptops during Hack The Ridge" },
-  { src: "/last_year/history1.jpg", alt: "The Hack The Ridge community together on stage" },
-  { src: "/last_year/history5.jpg", alt: "Students sharing pizza during a break at Hack The Ridge" },
-];
-
 const fadeUp = {
   hidden: { opacity: 0, y: 26 },
   visible: { opacity: 1, y: 0 },
@@ -62,7 +57,7 @@ export default function Home() {
       <Background />
 
       <section id="home" className="htr-hero relative px-5 text-htr-white sm:px-8 lg:px-12" aria-labelledby="home-title">
-        <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="htr-hero-panel relative z-10 mx-auto w-full max-w-7xl">
           <h1 id="home-title" className="sr-only">Hack The Ridge 2026</h1>
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7 }} className="htr-hero-stage">
             <div className="htr-hero-wordmark-wrap" aria-hidden="true">
@@ -95,13 +90,7 @@ export default function Home() {
             <h2 id="about-title" className="font-sacco max-w-3xl text-6xl font-black leading-[0.95] sm:text-7xl">Your idea. One day.</h2>
             <p className="max-w-xl text-lg leading-8">12 hours to build, learn from mentors, and meet other students. No coding experience needed.</p>
           </div>
-          <div id="experience" className="htr-photo-grid mt-10 scroll-mt-28">
-            {gallery.map((photo) => (
-              <div key={photo.src} className="htr-event-photo">
-                <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 767px) 100vw, 50vw" className="object-cover" />
-              </div>
-            ))}
-          </div>
+          <EventGallery />
         </div>
       </section>
 

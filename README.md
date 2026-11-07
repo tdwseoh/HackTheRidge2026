@@ -15,11 +15,11 @@ Open http://localhost:3000. To check a production build, run `npm run build`.
 
 ## Review changes
 
-- Open hero layout with quick event information and unboxed statistics.
-- A short About introduction and three event photos replace the repeated process cards, six-stop pitch, and moving photo strip. The hero keeps the event type, date, location, and registration action; sponsor and footer copy is concise.
+- Aligned hero layout with quick event information, consistent spacing, and a solid reading surface above the city scenery.
+- A short About introduction and a rotating gallery of 13 existing event photos replace the repeated process cards, six-stop pitch, and moving photo strip. The hero keeps the event type, date, location, and registration action; sponsor and footer copy is concise.
 - Section order: Home, About HTR with event photos, 2025 Hall of Fame, History, Registration, Sponsors, Team, FAQ Terminal.
 - The original 2025 website is linked from the footer. Its original design is retained, with the custom cursor removed.
-- Warm daytime city and a night mode, selected with the Day/Night button in the header and remembered locally. The city includes autumn trees, streetlights, rooftop details, and a rounded four carriage train with illuminated windows. Camera movement is bounded above the road throughout scrolling.
+- Muted blue-gray daytime city and a night mode, selected with the Day/Night button in the header and remembered locally. The city includes autumn trees, streetlights, rooftop details, and a rounded four carriage train with illuminated windows. Camera movement is bounded above the road throughout scrolling.
 - Responsive FAQ spacing and playful terminal usernames.
 - Browser and mobile icons use the supplied 2026 logo; homepage metadata and canonical URL identify Hack The Ridge 2026.
 - Registration links share `REGISTRATION_URL` in `src/lib/links.ts`. Update this constant when the registration destination changes.
@@ -36,19 +36,24 @@ Light mode uses dark text across the hero, counters, links, and reading sections
 
 ## Interface palette
 
-The semantic `--city-*` variables in `src/app/review.css` define interface colours from the 2026 promo palette. Reuse these roles instead of choosing new colours for each component.
+The semantic `--city-*` variables in `src/app/review.css` pair the 2026 brand accents with neutral reading surfaces. Text stays on opaque panels so the city does not affect contrast. Reuse these roles instead of choosing new colours for each component.
 
 | Role | Day | Night |
 | --- | --- | --- |
-| Background / reading surface | `#DDF5F6` | `#2A4365` |
-| Body text / secondary button text and border | `#2A4365` | `#DDF5F6` |
-| Muted text | `#32586F` | `#B1D9BE` |
+| Page canvas | `#E4ECF2` | `#112333` |
+| Reading surface / header | `#FFFFFF` | `#1B3045` |
+| Body text / secondary button text and border | `#152A40` | `#EEF4F8` |
+| Muted text | `#4A5D70` | `#B9CCD9` |
 | Primary registration button | `#4A5899` | `#B1D9BE` |
 | Primary button text | `#FFFFFF` | `#1E3920` |
 | Primary hover background | `#2A4365` | `#DDF5F6` |
-| Secondary hover background | `#B1D9BE` | `#32586F` |
+| Secondary hover background | `#EDF4F0` | `#29475E` |
 | Keyboard focus outline | `#4A5899` | `#B1D9BE` |
 
 Reserve filled primary buttons for registration. Secondary actions use transparent backgrounds with outlined borders. Focus indicators are 3px wide with a 3px offset. The footer and FAQ terminal are inverse surfaces in both themes, using navy, pale blue text, and mint focus indicators. The decorative city scene retains its own artwork colours.
 
-Calculated text contrast ratios: body text 8.84:1 in both themes; registration buttons 6.67:1 by day and 8.15:1 by night. The hover combinations also exceed 4.5:1. These pair checks do not establish whole-site WCAG conformance.
+Calculated text contrast ratios: body text 14.61:1 by day and 12.17:1 by night; muted text 6.79:1 by day and 8.17:1 by night; registration buttons 6.67:1 by day and 8.15:1 by night. The hover combinations also exceed 4.5:1. These pair checks do not establish whole-site WCAG conformance.
+
+## Event gallery
+
+`src/app/components/EventGallery.tsx` cycles through all 13 existing history/event photographs every five seconds while in view. It pauses on hover, keyboard focus, or a hidden browser tab. Previous/next controls and arrow keys stop automatic playback; the Play button resumes it after focus and hover leave the gallery. Reduced-motion preferences disable autoplay and crossfades by default. Controls remain at least 44px, and the image changes do not trigger live announcements during autoplay.
