@@ -22,7 +22,7 @@ import SponsorsGrid from "./components/SponsorsGrid";
 import HistoryPuzzleSection from "./components/HistoryPuzzleSection";
 import TeamSection from "./components/TeamSection";
 import { openMapsForDevice } from "@/lib/maps";
-import { INTEREST_FORM_URL } from "@/lib/links";
+import { REGISTRATION_URL } from "@/lib/links";
 
 
 
@@ -129,10 +129,10 @@ export default function Home() {
             </button>
             <p className="htr-event-invitation">Join Hack The Ridge</p>
             <a
-              href={"https://62c3ac57.htr-dashboard2026.pages.dev/auth"} target="_blank" rel="noopener noreferrer"
+              href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer"
               className="htr-register-link"
             >
-              Sign Up!
+              Sign Up
             </a>
           </div>
 
@@ -302,10 +302,10 @@ export default function Home() {
             <h2 className="font-sacco mt-4 text-6xl font-black uppercase leading-[0.95] tracking-[0.035em] sm:text-7xl lg:text-8xl">See you at the Ridge.</h2>
           </div>
           <div className="lg:justify-self-end">
-            <p className="max-w-md text-lg leading-8">Interested in joining us? Fill out our interest form. The date and registration details are coming soon.</p>
-            <div className="htr-interest-actions">
-              <a href="https://www.instagram.com/hacktheridge/" target="_blank" rel="noopener noreferrer" className="htr-instagram-updates" aria-label="Check Instagram for updates" title="Check Instagram for updates"><Instagram aria-hidden="true" size={22} strokeWidth={1.8} /><span>Check Instagram for updates</span></a>
-              {/* <a href={INTEREST_FORM_URL} target="_blank" rel="noopener noreferrer" className="htr-register-link" style={{ borderRadius: 99 }}>I’m interested</a> */}
+            <p className="max-w-md text-lg leading-8">Join us on December 12, 2026 at Iroquois Ridge High School. Sign up to register for Hack The Ridge.</p>
+            <div className="htr-registration-actions">
+              <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer" className="htr-register-link">Sign Up</a>
+              <a href="https://www.instagram.com/hacktheridge/" target="_blank" rel="noopener noreferrer" className="htr-secondary-link"><Instagram aria-hidden="true" size={22} strokeWidth={1.8} /><span>Check Instagram for updates</span></a>
             </div>
           </div>
         </div>

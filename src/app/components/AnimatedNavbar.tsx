@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCityTheme } from "./CityTheme";
-import { INTEREST_FORM_URL } from "@/lib/links";
+import { REGISTRATION_URL } from "@/lib/links";
 
 const sections = [
   ["#about", "About HTR"], ["#experience", "A Day at HTR"],
   ["#winners", "2025 Hall of Fame"], ["#history", "History"],
-  ["#register", "Interested?"], ["#sponsors", "Sponsors"],
+  [REGISTRATION_URL, "Sign Up"], ["#sponsors", "Sponsors"],
   ["#team", "Team"], ["#faq", "FAQ"],
 ];
 
@@ -41,8 +41,8 @@ export default function AnimatedNavbar() {
           <span>Hack The Ridge</span>
         </Link>
         <nav className="city-header-actions" aria-label="Main navigation">
-          <button className="city-theme-toggle" type="button" aria-label="Night mode" aria-pressed={theme === "night"} onClick={toggleTheme}><span className="city-theme-orb" aria-hidden="true" />{theme === "night" ? "Night" : "Day"}</button>
-          <a href={INTEREST_FORM_URL} target="_blank" rel="noopener noreferrer" className="city-register" onClick={() => setOpen(false)}>Interested?</a>
+          <button className="city-theme-toggle" type="button" aria-label={`${theme === "night" ? "Night" : "Day"} theme: switch to ${theme === "night" ? "day" : "night"} mode`} aria-pressed={theme === "night"} onClick={toggleTheme}><span className="city-theme-orb" aria-hidden="true" />{theme === "night" ? "Night" : "Day"}</button>
+          <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer" className="city-register htr-register-link" onClick={() => setOpen(false)}>Sign Up</a>
           <button ref={toggle} type="button" aria-expanded={open} aria-controls="city-navigation" onClick={() => setOpen(!open)}>
             {open ? "Close" : "Explore"}<span aria-hidden="true">{open ? "−" : "+"}</span>
           </button>
@@ -50,7 +50,7 @@ export default function AnimatedNavbar() {
       </div>
       {open && (
         <nav id="city-navigation" className="city-navigation" aria-label="Page sections">
-          {sections.map(([href, label]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
+          {sections.map(([href, label]) => <Link key={href} href={href} target={href === REGISTRATION_URL ? "_blank" : undefined} rel={href === REGISTRATION_URL ? "noopener noreferrer" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}
         </nav>
       )}
     </header>
